@@ -2,17 +2,18 @@ import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Hero from '../components/Hero'
 import Layout from '../components/Layout'
+import MovieSection from '../components/MovieSection'
 import getMovies from '../lib/getMovies'
 import { HomeProps } from '../types/types'
 
-const Home: NextPage<HomeProps> = ({ netflixOriginals }) => {
-  console.log(netflixOriginals)
+const Home: NextPage<HomeProps> = props => {
   return (
     <Layout>
       <Head>
         <title>Home - Netflix</title>
       </Head>
-      <Hero netflixOriginals={netflixOriginals} />
+      <Hero netflixOriginals={props.netflixOriginals} />
+      <MovieSection allMovies={props} />
     </Layout>
   )
 }

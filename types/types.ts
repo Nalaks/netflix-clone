@@ -35,7 +35,9 @@ export interface LayoutProps {
   children: React.ReactNode
 }
 
-export interface HomeProps {
+export interface HomeProps extends AllMovies {}
+
+export interface AllMovies {
   netflixOriginals: Movie[]
   trendingNow: Movie[]
   topRated: Movie[]
@@ -45,21 +47,19 @@ export interface HomeProps {
   romanceMovies: Movie[]
   documentaries: Movie[]
 }
-
-export interface AllMovies {
-  netflixOriginals: Movie[] | []
-  trendingNow: Movie[] | []
-  topRated: Movie[] | []
-  actionMovies: Movie[] | []
-  comedyMovies: Movie[] | []
-  horrorMovies: Movie[] | []
-  romanceMovies: Movie[] | []
-  documentaries: Movie[] | []
-}
 export interface GetMovies {
   (): Promise<AllMovies>
 }
 
 export interface HeroProps {
   netflixOriginals: Movie[]
+}
+
+export interface MovieSectionProps {
+  allMovies: AllMovies
+}
+
+export interface MovieRowProps {
+  title: string
+  movies: Movie[]
 }
