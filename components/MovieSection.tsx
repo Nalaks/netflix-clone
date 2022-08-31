@@ -14,7 +14,7 @@ const MovieSection: NextPage<MovieSectionProps> = ({ allMovies }) => {
   } = allMovies
   return (
     <>
-      <section>
+      <section className='md:space-y-24'>
         <MovieRow title='Trending Now' movies={trendingNow} />
         <MovieRow title='Top Rated' movies={topRated} />
         <MovieRow title='Action Thrillers' movies={actionMovies} />

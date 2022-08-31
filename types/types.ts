@@ -63,3 +63,7 @@ export interface MovieRowProps {
   title: string
   movies: Movie[]
 }
+
+export interface ThumbnailProps {
+  movie: Movie
+}
