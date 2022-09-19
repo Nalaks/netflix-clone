@@ -18,9 +18,6 @@ const MovieSection: NextPage<MovieSectionProps> = ({ allMovies }) => {
         <MovieRow title='Trending Now' movies={trendingNow} />
         <MovieRow title='Top Rated' movies={topRated} />
         <MovieRow title='Action Thrillers' movies={actionMovies} />
-        {/* My List */}
-        {/* {list.length > 0 && <MovieRow title='My List' movies={list} />} */}
-
         <MovieRow title='Comedies' movies={comedyMovies} />
         <MovieRow title='Scary Movies' movies={horrorMovies} />
         <MovieRow title='Romance Movies' movies={romanceMovies} />
