@@ -80,6 +80,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
       setLoading(false)
     } catch (error) {
       console.log(error)
+      alert(error)
       // Todo: Add error handling
     } finally {
       setLoading(false)
@@ -120,7 +121,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
   )
 }
 
-const useAuth = () => {
+const useAuth: any = () => {
   return useContext(AuthContext)
 }
 

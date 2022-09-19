@@ -3,7 +3,7 @@ import { getFirestore } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: process.env.FB_API_KEY,
+  apiKey: 'AIzaSyALNBJXlCloZy3fOcS3FUZ8nAPMks1rFo0',
   authDomain: 'netflix-clone-5035a.firebaseapp.com',
   projectId: 'netflix-clone-5035a',
   storageBucket: 'netflix-clone-5035a.appspot.com',

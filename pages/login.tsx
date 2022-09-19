@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { Inputs } from '../types/types'
+import useAuth from '../hooks/useAuth'
 
 const Login: NextPage = () => {
   const [login, setLogin] = useState(false)
@@ -13,9 +14,13 @@ const Login: NextPage = () => {
     handleSubmit,
     formState: { errors }
   } = useForm<Inputs>()
+  const { signIn, signUp } = useAuth()
+
   const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {
     if (login) {
+      await signIn(email, password)
     } else {
+      await signUp(email, password)
     }
   }
   return (

@@ -3,9 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { HiSearch, HiBell } from 'react-icons/hi'
+import useAuth from '../hooks/useAuth'
 
 const Header: NextPage = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const { logout } = useAuth()
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setIsScrolled(true)
@@ -43,15 +45,16 @@ const Header: NextPage = () => {
         <p className='hidden lg:inline'>Kids</p>
         <HiBell className='h-6 w-6' />
         <div></div>
-        <Link href='/account'>
-          <Image
-            src='/account_logo.png'
-            width={30}
-            height={30}
-            className='cursor-pointer rounded'
-            alt='account logo'
-          />
-        </Link>
+        {/* <Link href='/account'> */}
+        <Image
+          src='/account_logo.png'
+          width={30}
+          height={30}
+          className='cursor-pointer rounded'
+          alt='account logo'
+          onClick={() => logout()}
+        />
+        {/* </Link> */}
       </div>
     </header>
   )
