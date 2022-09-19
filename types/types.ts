@@ -1,3 +1,4 @@
+import { User } from 'firebase/auth'
 export interface Genre {
   id: number
   name: string
@@ -66,4 +67,22 @@ export interface MovieRowProps {
 
 export interface ThumbnailProps {
   movie: Movie
+}
+
+export interface Inputs {
+  email: string
+  password: string
+}
+
+export interface AuthProviderProps {
+  children: React.ReactNode
+}
+
+export interface IAuthContext {
+  user: User | null
+  signIn: (email: string, password: string) => Promise<void>
+  signUp: (email: string, password: string) => Promise<void>
+  logout: () => Promise<void>
+  error: string | null
+  loading: boolean
 }
