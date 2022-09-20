@@ -10,7 +10,7 @@ const Thumbnail: NextPage<ThumbnailProps> = ({ movie }) => {
   const [currentMovie, setCurrentMovie] = useRecoilState(movieState)
 
   const handleOpenModal = () => {
-    setCurrentMovie(currentMovie)
+    setCurrentMovie(movie)
     setShowModal(true)
   }
 

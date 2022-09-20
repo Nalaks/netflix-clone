@@ -2,7 +2,7 @@ import { GetMovies } from '../types/types'
 import { URL } from './constants'
 
 const getMovies: GetMovies = async () => {
-  const apiKey = process.env.TMDB_API_KEY
+  const apiKey = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
   const requests = {
     fetchTrending: `${URL}/trending/all/week?api_key=${apiKey}&language=en-US`,
