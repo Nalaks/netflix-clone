@@ -9,15 +9,20 @@ import getMovies from '../lib/getMovies'
 import { HomeProps } from '../types/types'
 import { modalState } from '../lib/modelAtom'
 import Modal from '../components/Modal'
+import Plans from '../components/Plans'
 
 const Home: NextPage<HomeProps> = props => {
   const { loading } = useAuth()
   const showModal = useRecoilValue(modalState)
+  const subscriptions = false
 
   if (loading) {
     // TODO: Add loading component
     return <div>Loading...</div>
   }
+
+  if (!subscriptions) return <Plans />
+
   return (
     <Layout>
       <Head>
