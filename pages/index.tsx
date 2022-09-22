@@ -10,18 +10,19 @@ import { HomeProps } from '../types/types'
 import { modalState } from '../lib/modelAtom'
 import Modal from '../components/Modal'
 import Plans from '../components/Plans'
+import { useState } from 'react'
 
 const Home: NextPage<HomeProps> = props => {
   const { loading } = useAuth()
   const showModal = useRecoilValue(modalState)
-  const subscriptions = false
+  const [subscriptions, setSubscriptions] = useState(false)
 
   if (loading) {
     // TODO: Add loading component
     return <div>Loading...</div>
   }
 
-  if (!subscriptions) return <Plans />
+  if (!subscriptions) return <Plans setSubscriptions={setSubscriptions} />
 
   return (
     <Layout>

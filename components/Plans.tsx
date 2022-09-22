@@ -6,7 +6,7 @@ import { HiCheck } from 'react-icons/hi'
 import useAuth from '../hooks/useAuth'
 import Table from './Table'
 
-const Plans: NextPage = () => {
+const Plans: NextPage<{ setSubscriptions: any }> = ({ setSubscriptions }) => {
   const { logout } = useAuth()
   return (
     <>
@@ -56,7 +56,7 @@ const Plans: NextPage = () => {
             <div className='plan-box'>Premium</div>
           </div>
           <Table />
-          <button>Subscribe</button>
+          <button onClick={() => setSubscriptions(true)}>Subscribe</button>
         </div>
       </main>
     </>
